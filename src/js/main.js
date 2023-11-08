@@ -123,13 +123,27 @@ async function logMovies() {
     img.alt = "Poster for " + movies[i].name;
     img.src = movies[i].imageUrl;
     img.className = "movieposter";
-    movieCard.appendChild(img);
+    const imgDiv = document.createElement("div");
+    imgDiv.className = "imgdiv"
+    imgDiv.appendChild(img);
+    movieCard.appendChild(imgDiv);
 
-    const description = document.createElement("h2");
+    const year = document.createElement("h4");
+    year.innerHTML = movies[i].year;
+    movieCard.appendChild(year);
+    
+
+    const description = document.createElement("p");
     description.innerHTML = movies[i].description;
+    description.className = "description";
     movieCard.appendChild(description);
     
 
+    const price = document.createElement("h3");
+    price.innerHTML = "Pris: "+ movies[i].price +" kr";
+    price.className = "price";
+    movieCard.appendChild(price);
+    
 
   }
   
